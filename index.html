@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('#menu-toggle');
+      const navLinks = document.querySelector('.navbar-links');
+      menuToggle.addEventListener('change', function() {
+        navLinks.classList.toggle('active');
+      });
+      // Smooth scroll for nav links
+      document.querySelectorAll('.navbar-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            menuToggle.checked = false;
+            navLinks.classList.remove('active');
+          }
+        });
+      });
+      // Hero CTA scroll
+      const heroCta = document.querySelector('.hero-section .cta-btn');
+      if (heroCta) {
+        heroCta.addEventListener('click', () => {
+          document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Brandify</a>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <ul class="navbar-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <h1>Welcome to Brandify!</h1>
+    <p>Join millions who trust us to power their online success. Modern, reliable, and built for you.</p>
+    <button class="cta-btn">Explore Pricing Plans</button>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <h2>Choose a Plan That Fits Your Needs</h2>
+    <div class="pricing-cards">
+      <div class="card">
+        <p>$0<span class="month-text">/month</span></p>
+        <span class="badge">Free</span>
+        <h3>Free</h3>
+        <p>$0<span class="month-text">/month</span></p>
+        <ul>
+          <li><span class="checkmark">✓</span> 1 User</li>
+          <li><span class="checkmark">✓</span> Basic Support</li>
+          <li><span class="checkmark">✓</span> Limited Analytics</li>
+        </ul>
+        <button class="cta-btn">Get Started</button>
+      </div>
+      <div class="card pro">
+        <p>$19.99<span class="month-text">/month</span></p>
+        <span class="badge">Most Popular</span>
+        <h3>Pro</h3>
+        <p>$19.99<span class="month-text">/month</span></p>
+        <ul>
+          <li><span class="checkmark">✓</span> Unlimited Users</li>
+          <li><span class="checkmark">✓</span> Priority Support</li>
+          <li><span class="checkmark">✓</span> Advanced Analytics</li>
+          <li><span class="checkmark">✓</span> Custom Integrations</li>
+        </ul>
+        <button class="cta-btn">Choose Pro Plan</button>
+      </div>
+      <div class="card">
+        <p>$39.99<span class="month-text">/month</span></p>
+        <span class="badge">Premium</span>
+        <h3>Premium</h3>
+        <p>$39.99<span class="month-text">/month</span></p>
+        <ul>
+          <li><span class="checkmark">✓</span> Everything in Pro</li>
+          <li><span class="checkmark">✓</span> Dedicated Manager</li>
+          <li><span class="checkmark">✓</span> 24/7 Phone Support</li>
+          <li><span class="checkmark">✓</span> SLA & Uptime Guarantee</li>
+        </ul>
+        <button class="cta-btn">Go Premium</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Contact Us) -->
+  <section id="contact" class="contact-us">
+    <h2>Contact Us</h2>
+    <p>Have questions or need help? Reach out to our team!</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  <footer class="site-footer">
+    &copy; 2025 Pranav Pawar | <a href="https://risetechy.com" class="site-link footer-link" target="_blank" rel="noopener">risetechy.com</a>
+  </footer>
+</body>
+</html>
