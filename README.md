@@ -1,4 +1,4 @@
-# Brandify Pricing Page (Lovely Pricing Page UI )
+# Brandify Pricing Page
 
 A modern, responsive pricing and landing page for tech products or SaaS, built with HTML and CSS.
 
@@ -19,7 +19,10 @@ A modern, responsive pricing and landing page for tech products or SaaS, built w
 
 ## 🛠️ Usage
 
-1. Clone or download this repository.
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/pranavisback/Pricing_Page.git
+   ```
 2. Open `index.html` in your browser.
 3. Customize the content, plans, or styles as needed.
 
@@ -47,7 +50,7 @@ Pricing page/
 ## 👤 Author
 
 **Pranav Pawar**  
-Tech Website: [risetechy.com](https://risetechy.com)
+Website: [risetechy.com](https://risetechy.com)
 
 ---
 
