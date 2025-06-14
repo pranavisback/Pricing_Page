@@ -11,7 +11,24 @@ button, .cta-btn { cursor: pointer; border: none; border-radius: 25px; padding: 
 
 /* Navbar styles */
 .navbar { display: flex; justify-content: space-between; align-items: center; background: #222; padding: 1.2rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
-.navbar .logo { color: #fff; font-size: 2rem; font-weight: bold; letter-spacing: 2px; }
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.navbar .logo img {
+  height: 38px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.navbar .logo span {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+}
 .navbar-links { display: flex; gap: 2rem; list-style: none; }
 .navbar-links li a { color: #fff; font-size: 1.1rem; position: relative; padding: 0.2rem 0.5rem; transition: color 0.2s; }
 .navbar-links li a.active, .navbar-links li a:hover { color: #4f8cff; }
@@ -25,6 +42,12 @@ button, .cta-btn { cursor: pointer; border: none; border-radius: 25px; padding: 
 }
 @media (max-width: 768px) {
   .navbar .logo { font-size: 1.5rem; }
+  .navbar .logo img {
+    height: 28px;
+  }
+  .navbar .logo span {
+    font-size: 1.2rem;
+  }
   .hamburger { display: block; }
   .navbar-links { display: none; flex-direction: column; background: #222; position: absolute; top: 100%; left: 0; width: 100vw; box-shadow: 0 4px 16px rgba(0,0,0,0.12); padding: 1.5rem 0; }
   .navbar-links.active { display: flex; }
